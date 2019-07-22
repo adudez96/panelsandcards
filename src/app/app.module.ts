@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { DragPanelComponent } from './components/drag-panel.component';
+import { ResizableModule } from 'angular-resizable-element';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DragPanelComponent } from './components/drag-panel.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
+    ResizableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
