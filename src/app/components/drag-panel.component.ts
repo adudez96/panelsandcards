@@ -23,9 +23,7 @@ import { ResizeEvent } from 'angular-resizable-element';
     <div class="panel-resize-handle"
       mwlResizeHandle
       [resizeEdges]="{bottom: true, right: true}"
-    >
-      O
-    </div>
+    ></div>
   </div>
   `
 })
