@@ -1,5 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { ResizeEvent } from 'angular-resizable-element';
+
+export enum DragPanelColorScheme {
+  RED
+}
 
 @Component({
   selector: 'drag-panel',
@@ -14,12 +18,18 @@ import { ResizeEvent } from 'angular-resizable-element';
     [validateResize]="validate"
     (resizeEnd)="onResizeEnd($event)"
   >
-    <div class="panel-drag-handle"
-      cdkDragHandle
-    >
-    D
+    <div class="drag-panel-header">
+      <div class="panel-drag-handle"
+        cdkDragHandle
+      >
+        <div class="panel-title">
+          Drag me!
+        </div>
+      </div>
     </div>
-    Drag me!
+
+    <div class="drag-panel-body"></div>
+
     <div class="panel-resize-handle"
       mwlResizeHandle
       [resizeEdges]="{bottom: true, right: true}"
@@ -28,6 +38,9 @@ import { ResizeEvent } from 'angular-resizable-element';
   `
 })
 export class DragPanelComponent {
+  @Input()
+  colorScheme: DragPanelColorScheme = DragPanelColorScheme.RED;
+
   public style: object = {};
 
   validate(event: ResizeEvent): boolean {

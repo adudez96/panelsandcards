@@ -1,12 +1,28 @@
+$theme-main: #ccc;
+
+.drag-panel-header {
+  display: flex;
+  width: 100%;
+
+  border-bottom: 1px solid $theme-main;
+}
+
+.drag-panel-body {
+  flex-grow: 1;
+  background-color: rgba($theme-main, 0.25);
+}
+
 .drag-panel {
   box-sizing: border-box; // required for the enableGhostResize option to work
   // display: block;
   width: 200px;
   height: 200px;
-  border: solid 1px #ccc;
+  border: solid 1px $theme-main;
   border-radius: 5px;
   position: absolute;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .drag-panel:active {
@@ -16,7 +32,10 @@
 }
 
 .panel-drag-handle {
+  width: 100%;
   cursor: move;
+  display: flex;
+  justify-content: center;
 }
 
 .panel-resize-handle {
