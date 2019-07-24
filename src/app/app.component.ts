@@ -15,9 +15,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.panelsList = [
-      new Panel(DragPanelColorScheme.RED, 0, 0),
-      new Panel(DragPanelColorScheme.BLUE, 0, 0),
-      new Panel(DragPanelColorScheme.WHITE, 0, 0),
+      new Panel(DragPanelColorScheme.RED, 0, 0, 0, 0),
+      new Panel(DragPanelColorScheme.BLUE, 0, 0, 0, 0),
+      new Panel(DragPanelColorScheme.WHITE, 0, 0, 0, 0),
     ]
   }
 }
