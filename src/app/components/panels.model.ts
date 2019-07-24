@@ -5,6 +5,7 @@ export enum DragPanelColorScheme {
 }
 
 export class Panel {
+  id: string;
   theme: DragPanelColorScheme;
   sizeX: number;
   sizeY: number;
