@@ -1,17 +1,12 @@
 import { Component, Input } from "@angular/core";
 import { ResizeEvent } from 'angular-resizable-element';
-
-export enum DragPanelColorScheme {
-  WHITE,
-  RED,
-  BLUE,
-}
+import { Panel, DragPanelColorScheme } from './panels.model';
 
 @Component({
   selector: 'drag-panel',
   styleUrls: [ './drag-panel.component.scss' ],
   template: `
-  <div [ngClass]="['drag-panel', mapColorScheme(colorScheme)]"
+  <div [ngClass]="['drag-panel', mapColorScheme(panel.theme)]"
     cdkDrag
     mwlResizable
     [enableGhostResize]="true"
@@ -41,7 +36,7 @@ export enum DragPanelColorScheme {
 })
 export class DragPanelComponent {
   @Input()
-  colorScheme: DragPanelColorScheme = DragPanelColorScheme.RED;
+  panel: Panel;
 
   public style: object = {};
 
