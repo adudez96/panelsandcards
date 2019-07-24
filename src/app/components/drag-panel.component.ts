@@ -3,7 +3,8 @@ import { ResizeEvent } from 'angular-resizable-element';
 
 export enum DragPanelColorScheme {
   WHITE,
-  RED
+  RED,
+  BLUE,
 }
 
 @Component({
@@ -69,11 +70,17 @@ export class DragPanelComponent {
 
   mapColorScheme(scheme: DragPanelColorScheme): string {
     if (scheme === DragPanelColorScheme.WHITE) {
-      return ".drag-panel-white";
+      return "drag-panel-white";
     }
 
     if (scheme === DragPanelColorScheme.RED) {
-      return ".drag-panel-red";
+      return "drag-panel-red";
     }
+
+    if (scheme === DragPanelColorScheme.BLUE) {
+      return "drag-panel-blue";
+    }
+
+    return "drag-panel-white";
   }
 };
