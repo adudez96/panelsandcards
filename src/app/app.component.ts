@@ -7,15 +7,18 @@ import { Panel, DragPanelColorScheme } from './components/panels.model';
   template: `
   <div class="app-root">
     <div class="menu">
-    <button mat-fab
-      class="create-panel-button"
-      (click)="onCreatePanel(DragPanelColorScheme.WHITE)">White</button>
-    <button mat-fab
-      class="create-panel-button"
-      (click)="onCreatePanel(DragPanelColorScheme.RED)">Red</button>
-    <button mat-fab
-      class="create-panel-button"
-      (click)="onCreatePanel(DragPanelColorScheme.BLUE)">Blue</button>
+      <button mat-fab
+        class="create-panel-button"
+        (click)="onCreatePanel(DragPanelColorScheme.WHITE)"
+      >White</button>
+      <button mat-fab
+        class="create-panel-button"
+        (click)="onCreatePanel(DragPanelColorScheme.RED)"
+      >Red</button>
+      <button mat-fab
+        class="create-panel-button"
+        (click)="onCreatePanel(DragPanelColorScheme.BLUE)"
+      >Blue</button>
     </div>
     <drag-panel *ngFor="let panel of panelsList" [panel]="panel"></drag-panel>
   </div>
@@ -26,8 +29,7 @@ export class AppComponent implements OnInit {
   DragPanelColorScheme = DragPanelColorScheme;
 
   ngOnInit() {
-    this.panelsList = [
-    ]
+    this.panelsList = []
   }
 
   onCreatePanel(scheme: DragPanelColorScheme) {
