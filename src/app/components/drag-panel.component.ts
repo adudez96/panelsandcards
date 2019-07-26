@@ -23,6 +23,9 @@ import { Panel, DragPanelColorScheme } from './panels.model';
           Drag me!
         </div>
       </div>
+      <div class="panel-delete-button">
+        <mat-icon>cancel</mat-icon>
+      </div>
     </div>
 
     <div class="drag-panel-body"></div>

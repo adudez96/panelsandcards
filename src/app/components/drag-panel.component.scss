@@ -65,4 +65,16 @@
     right: 0;
     cursor: nwse-resize;
   }
+
+  .panel-delete-button {
+    align-self: right;
+    .material-icons {
+      font-size: 19px;
+      cursor: pointer;
+    }
+
+    .material-icons:hover {
+      color: #bb0000;
+    }
+  }
 }
