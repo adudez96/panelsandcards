@@ -67,7 +67,9 @@
   }
 
   .panel-delete-button {
-    align-self: right;
+    position: relative;
+    top: 2px;
+    right: 0;
     .material-icons {
       font-size: 19px;
       cursor: pointer;
