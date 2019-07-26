@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Panel, DragPanelColorScheme } from './components/panels.model';
+import { Datastore } from './services/datastore.service';
 
 @Component({
   selector: 'app-root',
@@ -28,11 +29,16 @@ export class AppComponent implements OnInit {
   panelsList: Panel[];
   DragPanelColorScheme = DragPanelColorScheme;
 
+  constructor (private datastore: Datastore) {}
+
   ngOnInit() {
-    this.panelsList = []
+    this.datastore.getPanels().subscribe((panels: Panel[]) => {
+      this.panelsList = panels;
+    });
   }
 
   onCreatePanel(scheme: DragPanelColorScheme) {
     this.panelsList = [...this.panelsList, new Panel(scheme, 0, 0, 0, 0)];
+    this.datastore.putPanels(this.panelsList).subscribe();
   }
 }

@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { DragPanelComponent } from './components/drag-panel.component';
 import { ResizableModule } from 'angular-resizable-element';
+import { MyjsonService } from './services/myjson.service';
+import { Datastore } from './services/datastore.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { ResizableModule } from 'angular-resizable-element';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
     ResizableModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [
+    MyjsonService,
+    Datastore,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
