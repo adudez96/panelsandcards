@@ -1,6 +1,4 @@
-$theme-main-white: #ccc;
-$theme-main-red: #e72e00;
-$theme-main-blue: #3183ff;
+@import "../styles/theme-variables.scss";
 
 @mixin panelTheme ($panel-class, $theme-color) {
   .#{$panel-class} {

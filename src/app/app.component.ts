@@ -9,15 +9,15 @@ import { Datastore } from './services/datastore.service';
   <div class="app-root">
     <div class="menu">
       <button mat-fab
-        class="create-panel-button"
+        class="create-panel-button create-panel-button-white"
         (click)="onCreatePanel(DragPanelColorScheme.WHITE)"
       >White</button>
       <button mat-fab
-        class="create-panel-button"
+        class="create-panel-button create-panel-button-red"
         (click)="onCreatePanel(DragPanelColorScheme.RED)"
       >Red</button>
       <button mat-fab
-        class="create-panel-button"
+        class="create-panel-button create-panel-button-blue"
         (click)="onCreatePanel(DragPanelColorScheme.BLUE)"
       >Blue</button>
     </div>

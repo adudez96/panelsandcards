@@ -1,3 +1,19 @@
+@import "styles/theme-variables.scss";
+
 .create-panel-button {
   margin: 5px;
+  border-width: 2px;
+  border-style: solid;
+  color: #ccc;
 }
+
+@mixin createPanelButtonsTheme($button-class, $theme-color) {
+  .#{$button-class} {
+    border-color: $theme-color;
+    background-color: rgba($theme-color, 0.25);
+  }
+}
+
+@include createPanelButtonsTheme(create-panel-button-white, $theme-main-white);
+@include createPanelButtonsTheme(create-panel-button-red, $theme-main-red);
+@include createPanelButtonsTheme(create-panel-button-blue, $theme-main-blue);
