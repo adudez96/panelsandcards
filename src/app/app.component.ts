@@ -24,6 +24,7 @@ import { Datastore } from './services/datastore.service';
     <drag-panel *ngFor="let panel of panelsList" [panel]="panel"
       (onDeletePanel)="onDeletePanel(panel.id)"
       (onResizePanel)="onResizePanel()"
+      (onMovePanel)="onMovePanel()"
     ></drag-panel>
   </div>
   `
@@ -51,8 +52,10 @@ export class AppComponent implements OnInit {
   }
 
   onResizePanel() {
-    console.log('panel resized');
-    console.log(this.panelsList);
+    this.datastore.putPanels(this.panelsList).subscribe();
+  }
+
+  onMovePanel() {
     this.datastore.putPanels(this.panelsList).subscribe();
   }
 }
