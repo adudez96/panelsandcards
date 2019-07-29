@@ -1,4 +1,4 @@
-@import "../styles/theme-variables.scss";
+@import "../../styles/theme-variables.scss";
 
 @mixin panelTheme ($panel-class, $theme-color) {
   .#{$panel-class} {

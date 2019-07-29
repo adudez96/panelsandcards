@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Panel, DragPanelColorScheme } from './components/panels.model';
+import { Panel, DragPanelColorScheme } from './components/drag-panel/panels.model';
 import { Datastore } from './services/datastore.service';
 
 @Component({

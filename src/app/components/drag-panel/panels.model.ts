@@ -1,4 +1,4 @@
-import { uuidv4 } from '../utils/uuid';
+import { uuidv4 } from '../../utils/uuid';
 
 export enum DragPanelColorScheme {
   WHITE,

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Panel } from '../components/panels.model';
+import { Panel } from '../components/drag-panel/panels.model';
 import { MyjsonService } from './myjson.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
