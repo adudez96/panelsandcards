@@ -16,10 +16,10 @@ export class Panel {
 
   constructor(
     theme: DragPanelColorScheme,
-    sizeX: number,
-    sizeY: number,
     positionX: number,
     positionY: number,
+    sizeX: number,
+    sizeY: number,
   ) {
     this.id = uuidv4();
     this.theme = theme;

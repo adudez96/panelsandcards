@@ -23,6 +23,7 @@ import { Datastore } from './services/datastore.service';
     </div>
     <drag-panel *ngFor="let panel of panelsList" [panel]="panel"
       (onDeletePanel)="onDeletePanel(panel.id)"
+      (onResizePanel)="onResizePanel()"
     ></drag-panel>
   </div>
   `
@@ -40,12 +41,18 @@ export class AppComponent implements OnInit {
   }
 
   onCreatePanel(scheme: DragPanelColorScheme) {
-    this.panelsList = [...this.panelsList, new Panel(scheme, 0, 0, 0, 0)];
+    this.panelsList = [...this.panelsList, new Panel(scheme, 20, 80, 200, 200)];
     this.datastore.putPanels(this.panelsList).subscribe();
   }
 
   onDeletePanel(id: string) {
     this.panelsList = this.panelsList.filter((panel) => panel.id !== id);
+    this.datastore.putPanels(this.panelsList).subscribe();
+  }
+
+  onResizePanel() {
+    console.log('panel resized');
+    console.log(this.panelsList);
     this.datastore.putPanels(this.panelsList).subscribe();
   }
 }

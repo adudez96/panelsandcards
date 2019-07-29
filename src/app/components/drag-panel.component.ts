@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
 import { ResizeEvent } from 'angular-resizable-element';
 import { Panel, DragPanelColorScheme } from './panels.model';
 
@@ -39,14 +39,24 @@ import { Panel, DragPanelColorScheme } from './panels.model';
   </div>
   `
 })
-export class DragPanelComponent {
-  @Input()
-  panel: Panel;
+export class DragPanelComponent implements OnInit {
+  @Input() panel: Panel;
 
-  @Output()
-  onDeletePanel = new EventEmitter<void>();
+  @Output() onDeletePanel = new EventEmitter<void>();
+  @Output() onMovePanel = new EventEmitter<void>();
+  @Output() onResizePanel = new EventEmitter<void>();
 
   public style: object = {};
+
+  ngOnInit() {
+    this.style = {
+      position: 'fixed',
+      left: `${this.panel.positionX}px`,
+      top: `${this.panel.positionY}px`,
+      width: `${this.panel.sizeX}px`,
+      height: `${this.panel.sizeY}px`,
+    }
+  }
 
   handleDeletePanel() {
     this.onDeletePanel.emit();
@@ -73,6 +83,9 @@ export class DragPanelComponent {
       width: `${event.rectangle.width}px`,
       height: `${event.rectangle.height}px`
     };
+    this.panel.sizeX = event.rectangle.width;
+    this.panel.sizeY = event.rectangle.height;
+    this.onResizePanel.emit();
   }
 
   mapColorScheme(scheme: DragPanelColorScheme): string {
