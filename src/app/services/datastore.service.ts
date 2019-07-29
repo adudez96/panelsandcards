@@ -3,6 +3,7 @@ import { Panel } from '../components/panels.model';
 import { MyjsonService } from './myjson.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { element } from 'protractor';
 
 export class DatastoreModel {
   panels: Panel[];
@@ -32,12 +33,12 @@ export class Datastore {
   }
 
   putPanels(panels: Panel[]) : Observable<void> {
-    console.log('putting panel...');
     this.datastore.panels = panels;
-    return this.myjsonService.put(this.datastore).pipe(
-      map(() => {
-        console.log('put panel');
-      })
-    );
+    return this.myjsonService.put(this.datastore);
+  }
+
+  deletePanel(id: string) : Observable<void> {
+    this.datastore.panels = this.datastore.panels.filter((val) => val.id !== id);
+    return this.myjsonService.put(this.datastore);
   }
 }

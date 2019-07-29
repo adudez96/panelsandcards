@@ -21,7 +21,9 @@ import { Datastore } from './services/datastore.service';
         (click)="onCreatePanel(DragPanelColorScheme.BLUE)"
       >Blue</button>
     </div>
-    <drag-panel *ngFor="let panel of panelsList" [panel]="panel"></drag-panel>
+    <drag-panel *ngFor="let panel of panelsList" [panel]="panel"
+      (onDeletePanel)="onDeletePanel(panel.id)"
+    ></drag-panel>
   </div>
   `
 })
@@ -39,6 +41,11 @@ export class AppComponent implements OnInit {
 
   onCreatePanel(scheme: DragPanelColorScheme) {
     this.panelsList = [...this.panelsList, new Panel(scheme, 0, 0, 0, 0)];
+    this.datastore.putPanels(this.panelsList).subscribe();
+  }
+
+  onDeletePanel(id: string) {
+    this.panelsList = this.panelsList.filter((panel) => panel.id !== id);
     this.datastore.putPanels(this.panelsList).subscribe();
   }
 }

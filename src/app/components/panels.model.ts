@@ -1,3 +1,5 @@
+import { uuidv4 } from '../utils/uuid';
+
 export enum DragPanelColorScheme {
   WHITE,
   RED,
@@ -19,6 +21,7 @@ export class Panel {
     positionX: number,
     positionY: number,
   ) {
+    this.id = uuidv4();
     this.theme = theme;
     this.sizeX = sizeX;
     this.sizeY = sizeY;

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { ResizeEvent } from 'angular-resizable-element';
 import { Panel, DragPanelColorScheme } from './panels.model';
 
@@ -23,7 +23,9 @@ import { Panel, DragPanelColorScheme } from './panels.model';
           Drag me!
         </div>
       </div>
-      <div class="panel-delete-button">
+      <div class="panel-delete-button"
+        (click)="handleDeletePanel()"
+      >
         <mat-icon>cancel</mat-icon>
       </div>
     </div>
@@ -41,7 +43,14 @@ export class DragPanelComponent {
   @Input()
   panel: Panel;
 
+  @Output()
+  onDeletePanel = new EventEmitter<void>();
+
   public style: object = {};
+
+  handleDeletePanel() {
+    this.onDeletePanel.emit();
+  }
 
   validate(event: ResizeEvent): boolean {
     const MIN_DIMENSIONS_PX: number = 50;
