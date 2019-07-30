@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ResizeEvent } from 'angular-resizable-element';
-import { Panel, DragPanelColorScheme } from './panels.model';
+import { Panel, DragPanelColorScheme } from '../../models/panels.model';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { PanelMenuComponent } from './panel-menu.component';
 
