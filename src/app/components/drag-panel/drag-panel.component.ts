@@ -22,6 +22,7 @@ import { PanelMenuComponent } from './panel-menu.component';
       <div class="panel-drag-handle"
         cdkDragHandle
         [contextMenuTrigger]="menu"
+        (menuAction)="handleMenuAction($event)"
       >
         <div class="panel-title">
           Drag me!
@@ -114,5 +115,11 @@ export class DragPanelComponent implements OnInit {
     this.panel.positionY = values.y;
     console.log(this.panel);
     this.onMovePanel.emit();
+  }
+
+  handleMenuAction(event: any) {
+    if (event === 'delete') {
+      this.handleDeletePanel();
+    }
   }
 }

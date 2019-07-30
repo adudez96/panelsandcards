@@ -29,6 +29,6 @@ export class PanelMenuComponent extends MenuComponent {
 
   handleClick() {
     // IMPORTANT! tell the menu to close, anything passed in here is given to (menuAction)
-    this.contextMenuService.closeAll();
+    this.contextMenuService.closeAll('delete');
   }
 }
