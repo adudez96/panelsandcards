@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -35,4 +35,4 @@ import { PanelMenuComponent } from './panel-menu.component';
     PanelMenuComponent,
   ]
 })
-export class DragPanelModule {};
+export class DragPanelModule {}

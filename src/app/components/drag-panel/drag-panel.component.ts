@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ResizeEvent } from 'angular-resizable-element';
 import { Panel, DragPanelColorScheme } from './panels.model';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { PanelMenuComponent } from './panel-menu.component';
 
 @Component({
-  selector: 'drag-panel',
+  selector: 'app-drag-panel',
   styleUrls: [ './drag-panel.component.scss' ],
   template: `
   <div #thePanel [ngClass]="['drag-panel', mapColorScheme(panel.theme)]"
@@ -63,7 +63,7 @@ export class DragPanelComponent implements OnInit {
       top: `${this.panel.positionY}px`,
       width: `${this.panel.sizeX}px`,
       height: `${this.panel.sizeY}px`,
-    }
+    };
   }
 
   handleDeletePanel() {
@@ -71,7 +71,7 @@ export class DragPanelComponent implements OnInit {
   }
 
   validate(event: ResizeEvent): boolean {
-    const MIN_DIMENSIONS_PX: number = 50;
+    const MIN_DIMENSIONS_PX = 50;
     if (
       event.rectangle.width &&
       event.rectangle.height &&
@@ -98,26 +98,26 @@ export class DragPanelComponent implements OnInit {
 
   mapColorScheme(scheme: DragPanelColorScheme): string {
     if (scheme === DragPanelColorScheme.WHITE) {
-      return "drag-panel-white";
+      return 'drag-panel-white';
     }
 
     if (scheme === DragPanelColorScheme.RED) {
-      return "drag-panel-red";
+      return 'drag-panel-red';
     }
 
     if (scheme === DragPanelColorScheme.BLUE) {
-      return "drag-panel-blue";
+      return 'drag-panel-blue';
     }
 
-    return "drag-panel-white";
+    return 'drag-panel-white';
   }
 
   onDragEnd(event: CdkDragEnd) {
-    let values = this.thePanel.nativeElement.getBoundingClientRect();
+    const values = this.thePanel.nativeElement.getBoundingClientRect();
 
     this.panel.positionX = values.x;
     this.panel.positionY = values.y;
     console.log(this.panel);
     this.onMovePanel.emit();
   }
-};
+}

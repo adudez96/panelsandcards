@@ -21,11 +21,11 @@ import { Datastore } from './services/datastore.service';
         (click)="onCreatePanel(DragPanelColorScheme.BLUE)"
       >Blue</button>
     </div>
-    <drag-panel *ngFor="let panel of panelsList" [panel]="panel"
+    <app-drag-panel *ngFor="let panel of panelsList" [panel]="panel"
       (onDeletePanel)="onDeletePanel(panel.id)"
       (onResizePanel)="onResizePanel()"
       (onMovePanel)="onMovePanel()"
-    ></drag-panel>
+    ></app-drag-panel>
   </div>
   `
 })
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   panelsList: Panel[];
   DragPanelColorScheme = DragPanelColorScheme;
 
-  constructor (private datastore: Datastore) {}
+  constructor(private datastore: Datastore) {}
 
   ngOnInit() {
     this.datastore.getPanels().subscribe((panels: Panel[]) => {

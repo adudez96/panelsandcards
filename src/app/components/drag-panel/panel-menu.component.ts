@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MenuComponent, ContextMenuService, MenuPackage } from '@ctrl/ngx-rightclick';
 
 @Component({
-  selector: 'panel-menu',
+  selector: 'app-panel-menu',
   styleUrls: [ './panel-menu.component.scss' ],
   // add your menu html
   template: `
@@ -24,7 +24,7 @@ export class PanelMenuComponent extends MenuComponent {
   ) {
     super(menuPackage, contextMenuService);
     // grab any required menu context passed via menuContext input
-    console.log(menuPackage.context)
+    console.log(menuPackage.context);
   }
 
   handleClick() {

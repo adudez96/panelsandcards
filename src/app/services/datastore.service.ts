@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Panel } from '../components/drag-panel/panels.model';
 import { MyjsonService } from './myjson.service';
 import { Observable } from 'rxjs';
@@ -13,14 +13,14 @@ export class DatastoreModel {
 export class Datastore {
   datastore: DatastoreModel;
 
-  constructor (private myjsonService: MyjsonService) {}
+  constructor(private myjsonService: MyjsonService) {}
 
-  getPanels() : Observable<Panel[]> {
+  getPanels(): Observable<Panel[]> {
     return this.myjsonService.get().pipe(
-      map((data:DatastoreModel) => {
+      map((data: DatastoreModel) => {
         let needsInit = false;
         if (data.panels === undefined) {
-          data.panels = []
+          data.panels = [];
           needsInit = true;
         }
         if (needsInit) {
@@ -32,12 +32,12 @@ export class Datastore {
     );
   }
 
-  putPanels(panels: Panel[]) : Observable<void> {
+  putPanels(panels: Panel[]): Observable<void> {
     this.datastore.panels = panels;
     return this.myjsonService.put(this.datastore);
   }
 
-  deletePanel(id: string) : Observable<void> {
+  deletePanel(id: string): Observable<void> {
     this.datastore.panels = this.datastore.panels.filter((val) => val.id !== id);
     return this.myjsonService.put(this.datastore);
   }
