@@ -113,7 +113,6 @@ export class DragPanelComponent implements OnInit {
 
     this.panel.positionX = values.x;
     this.panel.positionY = values.y;
-    console.log(this.panel);
     this.onMovePanel.emit();
   }
 
