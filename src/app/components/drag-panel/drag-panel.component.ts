@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef }
 import { ResizeEvent } from 'angular-resizable-element';
 import { Panel, DragPanelColorScheme } from './panels.model';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
+import { PanelMenuComponent } from './panel-menu.component';
 
 @Component({
   selector: 'drag-panel',
@@ -16,6 +17,7 @@ import { CdkDragEnd } from '@angular/cdk/drag-drop';
     (cdkDragEnded)="onDragEnd($event)"
     [validateResize]="validate"
     (resizeEnd)="onResizeEnd($event)"
+    [contextMenuTrigger]="menu"
   >
     <div class="drag-panel-header">
       <div class="panel-drag-handle"
@@ -51,6 +53,8 @@ export class DragPanelComponent implements OnInit {
   @ViewChild('thePanel', {static: false}) thePanel: ElementRef;
 
   public style: any = {};
+
+  menu = PanelMenuComponent;
 
   ngOnInit() {
     this.style = {
