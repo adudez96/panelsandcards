@@ -1,0 +1,34 @@
+$background-color: #ccc;
+$delete-color: #ad0000;
+
+$item-size: 50px;
+$item-inner-icon-size: $item-size * 4 / 5;
+
+.panel-menu {
+  background-color: $background-color;
+  border-radius: 5px;
+
+  .panel-menu-item {
+    color: $delete-color;
+    width: $item-size;
+    height: $item-size;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // text-align: center;
+
+    .mat-icon {
+      font-size: $item-inner-icon-size;
+      width: $item-inner-icon-size;
+      height: $item-inner-icon-size;
+    }
+  }
+
+  .panel-menu-item:hover {
+    background-color: $delete-color;
+    color: $background-color;
+  }
+}

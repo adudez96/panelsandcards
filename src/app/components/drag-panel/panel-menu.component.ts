@@ -4,8 +4,15 @@ import { MenuComponent, ContextMenuService, MenuPackage } from '@ctrl/ngx-rightc
 
 @Component({
   selector: 'panel-menu',
+  styleUrls: [ './panel-menu.component.scss' ],
   // add your menu html
-  template: `<a (click)="handleClick()">Download</a>`,
+  template: `
+    <div class="panel-menu">
+      <div class="panel-menu-item panel-delete-menu-item"
+        (click)="handleClick()"
+      ><mat-icon>cancel</mat-icon></div>
+    </div>
+  `,
 })
 export class PanelMenuComponent extends MenuComponent {
   // this module does not have animations, set lazy false

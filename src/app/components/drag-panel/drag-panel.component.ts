@@ -17,11 +17,11 @@ import { PanelMenuComponent } from './panel-menu.component';
     (cdkDragEnded)="onDragEnd($event)"
     [validateResize]="validate"
     (resizeEnd)="onResizeEnd($event)"
-    [contextMenuTrigger]="menu"
   >
     <div class="drag-panel-header">
       <div class="panel-drag-handle"
         cdkDragHandle
+        [contextMenuTrigger]="menu"
       >
         <div class="panel-title">
           Drag me!
