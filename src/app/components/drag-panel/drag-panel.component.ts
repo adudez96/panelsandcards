@@ -27,11 +27,6 @@ import { PanelMenuComponent } from './panel-menu.component';
           Drag me!
         </div>
       </div>
-      <div class="panel-delete-button"
-        (click)="handleDeletePanel()"
-      >
-        <mat-icon>cancel</mat-icon>
-      </div>
     </div>
 
     <div class="drag-panel-body"></div>

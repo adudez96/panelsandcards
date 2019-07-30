@@ -1,7 +1,7 @@
-$background-color: #ccc;
+$background-color: #ffffff;
 $delete-color: #ad0000;
 
-$item-size: 50px;
+$item-size: 35px;
 $item-inner-icon-size: $item-size * 4 / 5;
 
 .panel-menu {
@@ -12,13 +12,18 @@ $item-inner-icon-size: $item-size * 4 / 5;
     color: $delete-color;
     width: $item-size;
     height: $item-size;
+
+    border-radius: 5px;
     cursor: pointer;
 
+    // center the icon
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // text-align: center;
+
+    transition: background-color 0.35s ease;
+    transition: color 0.15s ease;
 
     .mat-icon {
       font-size: $item-inner-icon-size;

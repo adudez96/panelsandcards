@@ -10,7 +10,7 @@ import { MenuComponent, ContextMenuService, MenuPackage } from '@ctrl/ngx-rightc
     <div class="panel-menu">
       <div class="panel-menu-item panel-delete-menu-item"
         (click)="handleClick()"
-      ><mat-icon>cancel</mat-icon></div>
+      ><mat-icon>delete</mat-icon></div>
     </div>
   `,
 })
