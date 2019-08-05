@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   }
 
   onCreatePanel(scheme: DragPanelColorScheme) {
-    this.panelsList = [...this.panelsList, new Panel(scheme, 20, 80, 200, 200)];
+    this.panelsList = [...this.panelsList, new Panel('unlabelled', scheme, 20, 80, 200, 200)];
     this.datastore.putPanels(this.panelsList).subscribe();
   }
 

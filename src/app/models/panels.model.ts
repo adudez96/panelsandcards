@@ -8,6 +8,7 @@ export enum DragPanelColorScheme {
 
 export class Panel {
   id: string;
+  label: string;
   theme: DragPanelColorScheme;
   sizeX: number;
   sizeY: number;
@@ -15,6 +16,7 @@ export class Panel {
   positionY: number;
 
   constructor(
+    label: string,
     theme: DragPanelColorScheme,
     positionX: number,
     positionY: number,
@@ -22,6 +24,7 @@ export class Panel {
     sizeY: number,
   ) {
     this.id = uuidv4();
+    this.label = label;
     this.theme = theme;
     this.sizeX = sizeX;
     this.sizeY = sizeY;

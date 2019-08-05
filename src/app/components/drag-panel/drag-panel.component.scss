@@ -34,10 +34,14 @@
 
   .drag-panel-header {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
+
+    min-height: 30px;
   }
 
   .drag-panel-body {
@@ -64,19 +68,5 @@
     bottom: 0;
     right: 0;
     cursor: nwse-resize;
-  }
-
-  .panel-delete-button {
-    position: relative;
-    top: 2px;
-    right: 0;
-    .material-icons {
-      font-size: 19px;
-      cursor: pointer;
-    }
-
-    .material-icons:hover {
-      color: #bb0000;
-    }
   }
 }

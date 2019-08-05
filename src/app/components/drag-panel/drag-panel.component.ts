@@ -25,7 +25,7 @@ import { PanelMenuComponent } from './panel-menu.component';
         (menuAction)="handleMenuAction($event)"
       >
         <div class="panel-title">
-          Drag me!
+          {{ panel.label }}
         </div>
       </div>
     </div>
